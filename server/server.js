@@ -7,7 +7,11 @@ const app = express()
 
 const jwt = require('jsonwebtoken')
 
+const employeeRouter = require('../routes/employee-routes');
+
 app.use(express.json())
+
+app.use('/ecommerce/api', employeeRouter);
 
 const posts = [
     {

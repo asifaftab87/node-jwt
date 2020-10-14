@@ -9,6 +9,7 @@ const pool = mysql.createPool({
     port: '3306'
 });
 
+/*
 let node1DB = {};
 
 node1DB.all = () => {
@@ -38,5 +39,9 @@ node1DB.one = (id) => {
         });
     });
 };
+*/
 
-module.exports = node1DB;
+
+//module.exports = node1DB;
+
+module.exports = pool;

@@ -7,7 +7,7 @@ const app = express()
 
 const jwt = require('jsonwebtoken')
 
-const db = require('../config/db')
+//const db = require('../config/db')
 
 app.use(express.json())
 
@@ -55,6 +55,7 @@ app.post('/login', (req, res) => {
     res.json({ accessToken: accessToken, refreshToken: refreshToken })
 })
 
+/*
 app.get('/getData', authenticateToken, async (req, res) => {
 
     console.log("get method to get data")
@@ -70,7 +71,7 @@ app.get('/getData', authenticateToken, async (req, res) => {
     }
 
 })
-
+*/
 function authenticateToken(req, res, next){
 
     const authHeader = req.headers['authorization']
