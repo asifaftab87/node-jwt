@@ -1,7 +1,18 @@
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXViYXJhayIsImlhdCI6MTYwMjU2OTA5NCwiZXhwIjoxNjAyNTY5MTA5fQ.QSy-6AXorKIq0SlucEub4Dw-IJhiLPtGpuXFA1Zxgck
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXViYXJhayIsImlhdCI6MTYwMjY3MjY5OCwiZXhwIjoxNjAyNjcyNzEzfQ.YaurmCA-T8BNDNKHKWr9Mnj4qDxz8P5FtasSMNkVpUU
 
 ###
+
+
+
+GET http://localhost:4000/getData
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXViYXJhayIsImlhdCI6MTYwMjY4NDA4NSwiZXhwIjoxNjAyNjg0MTAwfQ.My0N7em8zJmzIAQIFbcO0yGar8u4VjXIeEOwAupTb-U
+
+
+
+###
+
 
 DELETE http://localhost:4000/logout
 Content-Type: application/json

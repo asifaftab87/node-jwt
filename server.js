@@ -13,7 +13,7 @@ const posts = [
     {
         username: 'asif',
         title: 'alam'
-    },
+    },  
     {
         username: 'mubarak',
         title: 'mr'

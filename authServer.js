@@ -7,6 +7,8 @@ const app = express()
 
 const jwt = require('jsonwebtoken')
 
+const db = require('./db-config')
+
 app.use(express.json())
 
 let refreshTokens = []
@@ -53,4 +55,39 @@ app.post('/login', (req, res) => {
     res.json({ accessToken: accessToken, refreshToken: refreshToken })
 })
 
+app.get('/getData', authenticateToken, async (req, res) => {
+
+    console.log("get method to get data")
+   // res.sendStatus(200)
+    
+    try{
+        let results = await db.all();
+        res.json(results);
+    }
+    catch(e){
+        console.log(e);
+        res.sendStatus(500);
+    }
+
+})
+
+function authenticateToken(req, res, next){
+
+    const authHeader = req.headers['authorization']
+
+    const token = authHeader && authHeader.split(' ')[1]
+
+    if(token == null)
+        return res.sendStatus(401)
+
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+        
+        if(err)
+            return res.sendStatus(403)
+
+        req.user = user
+
+        next()
+    })
+}
 app.listen(4000)
