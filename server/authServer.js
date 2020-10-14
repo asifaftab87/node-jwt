@@ -7,7 +7,7 @@ const app = express()
 
 const jwt = require('jsonwebtoken')
 
-const db = require('./db-config')
+const db = require('../config/db')
 
 app.use(express.json())
 
